@@ -1,3 +1,4 @@
 .idea/
 data/
-
+composer.lock
+vendor/
