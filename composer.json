@@ -1,0 +1,19 @@
+{
+    "name": "analyzer/stocks",
+    "authors": [
+        {
+            "name": "Parth Patel",
+            "email": "parthpatel1001@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.1",
+        "league/flysystem": "^1.0",
+        "symfony/console": "^3.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "Analyzer\\" : "src/"
+        }
+    }
+}

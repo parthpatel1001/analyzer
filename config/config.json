@@ -1,0 +1,4 @@
+{
+  "yahooFinanceBaseUrl": "http://ichart.finance.yahoo.com/table.csv",
+  "dataDir": "data/"
+}
