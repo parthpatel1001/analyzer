@@ -16,25 +16,12 @@ use League\Flysystem\Adapter\Local as LocalAdapter;
 
 class LoadTickers extends Command
 {
-    /**
-     * @var Config
-     */
-    private $config;
-    /**
-     * @var GuzzleClient
-     */
-    private $guzzleClient;
-    /**
-     * @var Filesystem
-     */
-    private $filesystem;
+    private $yahooFinance;
 
-    public function __construct(Config $config, GuzzleClient $guzzleClient, Filesystem $filesystem)
+    public function __construct(YahooFinance $yahooFinance)
     {
         parent::__construct();
-        $this->config = $config;
-        $this->guzzleClient = $guzzleClient;
-        $this->filesystem = $filesystem;
+        $this->yahooFinance = $yahooFinance;
     }
 
     protected function configure()
@@ -48,22 +35,12 @@ class LoadTickers extends Command
             );
     }
 
-    private function getYahooFinanceInstance()
-    {
-
-        return new YahooFinance(
-            $this->guzzleClient,
-            $this->filesystem
-        );
-    }
-
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $tickers = $input->getArgument('tickers');
-        $yahooFinance = $this->getYahooFinanceInstance();
         foreach($tickers as $ticker)
         {
-            $yahooFinance->getData($ticker,false,True,False);
+            $this->yahooFinance->getData($ticker,false,True,False);
             $output->writeln("Saved data for ticker $ticker");
         }
     }
