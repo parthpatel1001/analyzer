@@ -109,6 +109,15 @@ class TickerStats
      */
     public function getNDayAverageReturns(TickerCollection $tickerCollection, int $n, int $m = null, callable $chunk = null)
     {
+        // TODO this is copypasta do this better
+        if ($m !== null ) {
+            if ($m < $n) {
+                throw new \InvalidArgumentException("Invalid range ($n,$m)");
+            }
+        } else {
+            $m = $n + 1;
+        }
+
         if ($chunk)
         {
             $i = $n;
