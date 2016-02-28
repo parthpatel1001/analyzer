@@ -4,8 +4,6 @@ namespace Analyzer\Commands;
 
 
 use Analyzer\DataSources\YahooFinance;
-use Analyzer\Helpers\Math;
-use Analyzer\Models\Ticker;
 use Analyzer\Models\TickerStats;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
@@ -91,7 +89,7 @@ class CalculateStats extends Command
         foreach($tickers as $ticker)
         {
             $this->tickerStats->getNDayAverageReturns(
-                $this->yahooFinance->getData($ticker, true, false, true),
+                $this->yahooFinance->getData($ticker, true, true, true),
                 $i,
                 $m,
                 function ($avgReturns) use ($ticker,$output) {
