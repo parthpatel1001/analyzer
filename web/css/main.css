@@ -1,0 +1,99 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.border{
+	border: 30px solid #ac965c;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	pointer-events: none;
+}
+
+.holder {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+	padding: 30px;
+}
+
+.graph-holder {
+	background-color: #1a1a1a;
+	height: 100%;
+	position: fixed;
+	width: 64%;
+	right: 0;
+	margin-right: 30px;
+}
+
+.ticker-holder {
+	width: 33%;
+	float: left;
+	padding: 30px;
+}
+
+.ticker-1{border-top: 5px solid #ac965c;}
+.ticker-2{border-top: 5px solid #f6f6f6;}
+.ticker-3{border-top: 5px solid #79f7df;}
+.ticker-4{border-top: 5px solid #dd52a0;}
+
+.shade {
+	background-color: #f6f6f6;
+	overflow-x: hidden;
+}
+
+h4 {
+	padding-bottom: .5em;
+	font-weight: normal;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li:nth-of-type(odd) {
+	color: #ac965c;
+	font-size: 80%;
+	text-transform: uppercase;
+}
+
+li:nth-of-type(even) {
+	color: #1a1a1a;
+	padding-bottom: 1.5em;
+	font-size: 160%;
+	font-weight: 300;
+}
+
+.btn-default {
+	background-image: none !important;
+	width: 100%;
+	border-color: #ac965c;
+	color: #1a1a1a;
+}
+
+.dropdown-menu{
+	width: 100%;
+}
+
+.dropdown-menu>li>a {
+	color: #1a1a1a;
+}
+
+
+.spacer-30px{
+	margin-bottom: 30px;
+}
+
+
+
+
+
