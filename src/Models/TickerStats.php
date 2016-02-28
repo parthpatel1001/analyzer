@@ -34,7 +34,8 @@ class TickerStats
      * Return array looks like (if only m is provided, the same format is used but with only one item in result):
      * [
      *  '3' => ['2010-01-01' => 0.034,'2010-01-02' => 0.045], // 3 day return
-     *  '4' => ['2010-01-01' => 0.145,'2010-01-02' => -0.8] // 4 day return
+     *  '4' => ['2010-01-01' => 0.145,'2010-01-02' => -0.8], // 4 day return
+     *  ...
      * ]
      * @param TickerCollection $tickerCollection
      * @param int $n
@@ -80,11 +81,11 @@ class TickerStats
         }
 
         // TODO cache this so can get multiple stats
-        // $j - the $j-th day return from the current ticker
+        // $j - the $j-th day forward to look to calculate the return
         for ($j = $n; $j < $m; $j++)
         {
             $iterateTo = $len - $j;
-            // $i - the $i-th current ticker
+            // $i - the $i-th current price data row
             for ($i = 0; $i < $iterateTo; $i++)
             {
                 $currentTicker = $tickerCollection[$i];
