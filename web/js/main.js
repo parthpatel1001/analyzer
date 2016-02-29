@@ -28,29 +28,32 @@ $(document).ready(function(){
         }
     };
 
-    $getData.click(function(e){
-        e.preventDefault();
+    
+    $(document).keypress(function(e) {
+	    if(e.which == 13) {
+	        e.preventDefault();
 
-        var tickers = [$("#ticker1").val(),$("#ticker2").val(),$("#ticker3").val()];
-        var i = $("#returnsDayStart");
-        var m = $("#returnsDayEnd");
+	        var tickers = [$("#ticker1").val(),$("#ticker2").val(),$("#ticker3").val()];
+	        var i = $("#returnsDayStart");
+	        var m = $("#returnsDayEnd");
 
-        var data = {
-            tickers: tickers,
-            i: i.val(),
-            m: m.val()
-        };
+	        var data = {
+	            tickers: tickers,
+	            i: i.val(),
+	            m: m.val()
+	        };
 
-        console.log(data);
+	        console.log(data);
 
-        $.ajax({
-            dataType: "json",
-            url: '/',
-            data: data,
-            success: function(results) {
-                console.log('results',results);
-                create_ticker_data_column($tickerHolder,results);
-            }
-        });
+	        $.ajax({
+	            dataType: "json",
+	            url: '/',
+	            data: data,
+	            success: function(results) {
+	                console.log('results',results);
+	                create_ticker_data_column($tickerHolder,results);
+	            }
+	        });
+	    }
     });
 });
