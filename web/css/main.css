@@ -8,8 +8,28 @@ body{
 	font-weight: 400;
 }
 
+input{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.input-container{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ac965c;
+}
+
+.input-ticker {
+	width:100%; 
+	margin: 10px 0 30px 0; 
+	border:none;
+	background: transparent;
+	outline: none;
+}
+
 .border{
-	border: 30px solid #ac965c;
+	border: 15px solid #ac965c;
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -22,7 +42,7 @@ body{
 	position: absolute;
 	width: 100%;
 	z-index: 0;
-	padding: 30px;
+	padding: 15px;
 }
 
 .graph-holder {
@@ -31,19 +51,19 @@ body{
 	position: fixed;
 	width: 64%;
 	right: 0;
-	margin-right: 30px;
+	margin-right: 15px;
 }
 
 .ticker-holder {
-	width: 33%;
+	width: 34%;
 	float: left;
 	padding: 30px;
 }
 
-.ticker-1{border-top: 5px solid #ac965c;}
-.ticker-2{border-top: 5px solid #f6f6f6;}
-.ticker-3{border-top: 5px solid #79f7df;}
-.ticker-4{border-top: 5px solid #dd52a0;}
+.ticker-1{border-top: 5px solid #ac965c; padding-top: 30px;}
+.ticker-2{border-top: 5px solid #f6f6f6; padding-top: 30px;}
+.ticker-3{border-top: 5px solid #79f7df; padding-top: 30px;}
+.ticker-4{border-top: 5px solid #dd52a0; padding-top: 30px;}
 
 .shade {
 	background-color: #f6f6f6;
@@ -92,6 +112,18 @@ li:nth-of-type(even) {
 .spacer-30px{
 	margin-bottom: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

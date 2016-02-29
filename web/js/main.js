@@ -8,8 +8,8 @@ $(document).ready(function(){
 
         for (var ticker in data)
         {
-            var dataHtml = '<div class="col-sm-4 shade ticker-'+i+'">';
-            dataHtml += '<h4>_TICKER_</h4>';
+            var dataHtml = '<div class="col-sm-4 ticker-'+i+'">';
+            //dataHtml += '<h4>_TICKER_</h4>';
             dataHtml += '<ul>_DATA_</ul>';
             dataHtml += '</div>';
 
@@ -52,8 +52,10 @@ $(document).ready(function(){
 	            success: function(results) {
 	                console.log('results',results);
 	                create_ticker_data_column($tickerHolder,results);
-	            }
+	                $(".ticker-1, .ticker-3").addClass("shade");
+                }
 	        });
 	    }
+
     });
 });
