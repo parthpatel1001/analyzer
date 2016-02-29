@@ -40,6 +40,19 @@
 				    <li><a href="#">Separated link</a></li>
 				  </ul>
 				</div> -->
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input id="returnsDayStart" type="text" placeholder="# of Day Return start" value="1">
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="returnsDayEnd" type="text" placeholder="# of Day Return end" value="5">
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <button id="getData" type="button" class="button">Send</button>
+                    </div> -->
+                </div>
+
 				<div class="row">
 					<div class="col-sm-4">
 						<span class = "input-container"><input id="ticker1" class="input-ticker" type="text" name="ticker-1" value="SPY"></span>
@@ -51,18 +64,7 @@
 						<span class = "input-container"><input id="ticker3" class="input-ticker" type="text" name="ticker-3" value="AAPL"></span>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<input id="returnsDayStart" type="text" placeholder="# of Day Return start" value="1">
-					</div>
-					<div class="col-sm-4">
-						<input id="returnsDayEnd" type="text" placeholder="# of Day Return end" value="5">
-					</div>
-					<!-- <div class="col-sm-4">
-						<button id="getData" type="button" class="button">Send</button>
-					</div> -->
-				</div>
-				<div id="tickerColumns"></div> <!-- javascript will fill up data here -->
+				<div class = "row" id="tickerColumns"></div> <!-- javascript will fill up data here -->
         	</div>
         	<div class="graph-holder">
         	<p style="color:#ac965c">Ticker 1 Color: #ac965c</p>
