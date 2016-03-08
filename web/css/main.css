@@ -116,16 +116,32 @@ li:nth-of-type(even) {
 
 
 
+/* ==========================================================================
+   D3 Styles
+   ========================================================================== */
+
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #ffffff;
+	shape-rendering: crispEdges;
+}
+
+.element text {
+	text-anchor: end;
+}
+
+.area {
+	opacity: 0.7;
+}
 
 
 
+g text{
+	fill: #ffffff;
+}
 
-
-
-
-
-
-
-
-
-
+#graph-holder{
+	overflow: scroll;
+}

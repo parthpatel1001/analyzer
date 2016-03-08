@@ -30,21 +30,21 @@ $tickerStats = new TickerStats(new Math());
 
 $tickers = $request->get('tickers',[]);
 $i = (int) $request->get('i',0);
-$m = $request->get('m',null); $m = $m ? (int) $m : null;
+//$m = (int) $request->get('m',null) ?: null;
 $out = [];
 
 foreach($tickers as $ticker)
 {
-    $tickerStats->getNDayAverageReturns(
+    $tickerStats->getNDayReturns(
         $yahooFinance->getData($ticker, true, true, true),
         $i,
-        $m,
+        null,
         function ($avgReturns) use ($ticker,&$out) {
             foreach ($avgReturns as $nDayAvgReturn => $return) {
                 if (!isset($out[$ticker])) {
                     $out[$ticker] = [];
                 }
-                $out[$ticker][$nDayAvgReturn] = $return;
+                $out[$ticker] = $return;
             }
         }
     );
