@@ -1,4 +1,13 @@
 var Graph = function(d3){
+    /**
+     * data should be in the format:
+     * {
+     *  "seriesName" : {
+     *      "date" : value
+     *  }
+     * }
+     * @param data
+     */
     this.render = function(data){
         console.log('rendering',data);
 
