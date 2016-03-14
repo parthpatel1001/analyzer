@@ -27,7 +27,8 @@ var Graph = function(d3){
         var y = d3.scale.linear()
             .range([height, 0]);
 
-        var color = d3.scale.category20c();
+        var color = d3.scale.ordinal()
+            .range(["#FF0000", "#009933" , "#0000FF"]);
 
         var xAxis = d3.svg.axis()
             .scale(x)
