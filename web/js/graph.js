@@ -11,11 +11,15 @@ var Graph = function(d3){
     this.render = function(data){
         console.log('rendering',data);
 
-        var margin = {top: 20, right: 20, bottom: 30, left: 50},
-            width = 800 - margin.left - margin.right,
-            height = 800 - margin.top - margin.bottom;
+
+        var margin = {top: 0, right: 0, bottom: 5, left: 50},
+            width = 1000 - margin.left - margin.right,
+            height = 1200 - margin.top - margin.bottom;
 
         var parseDate = d3.time.format("%Y-%m-%d").parse;
+        var convertDate = function(d) {
+            return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDay();
+        };
 
         var x = d3.time.scale()
             .range([0, width]);
@@ -27,6 +31,7 @@ var Graph = function(d3){
 
         var xAxis = d3.svg.axis()
             .scale(x)
+            .tickFormat(function(d){ return convertDate(d); })
             .orient("bottom");
 
         var yAxis = d3.svg.axis()
@@ -44,8 +49,17 @@ var Graph = function(d3){
             });
 
         var svg = d3.select("#graph-holder").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            /*
+             .attr("width", width + margin.left + margin.right)
+
+             */
+            .attr("width", "100%")
+            //.attr("height", "100%")
+            .attr("height", height + margin.bottom)
+            .attr("viewBox", "0 0 "
+                + ((width + margin.left + margin.right)*1.05)
+                + " "
+                + ((height + margin.top + margin.bottom)*1.05))
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -94,9 +108,10 @@ var Graph = function(d3){
                 var entry = d3.entries(d.value);
                 return area(entry);
             })
-            .style("fill", function (d) {
+            .style("stroke", function (d) {
                 return color(d.key);
-            });
+            })
+            .style("fill", "none");
 
         element.append("text")
             .datum(function (d) {
@@ -119,7 +134,12 @@ var Graph = function(d3){
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
-            .call(xAxis);
+            .call(xAxis)
+            .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-65)" );
 
         svg.append("g")
             .attr("class", "y axis")

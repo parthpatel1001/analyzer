@@ -39,6 +39,7 @@ var Analyzer = function(document,$,d3,Graph){
         console.log('results',results);
         self.createTickerDataColumn(results);
         $(".ticker-1, .ticker-3").addClass("shade");
+        $("#graph-holder").empty();
         self.graph.render(results);
     };
 
