@@ -59,7 +59,7 @@ var Graph = function(d3){
             .attr("viewBox", "0 0 "
                 + ((width + margin.left + margin.right)*1.05)
                 + " "
-                + ((height + margin.top + margin.bottom)*1.05))
+                + ((height + margin.top + margin.bottom)*1.08))
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
