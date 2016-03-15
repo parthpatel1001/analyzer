@@ -14,7 +14,7 @@ var Graph = function(d3){
 
         var margin = {top: 0, right: 0, bottom: 5, left: 50},
             width = 1000 - margin.left - margin.right,
-            height = 1200 - margin.top - margin.bottom;
+            height = 650 - margin.top - margin.bottom;
 
         var parseDate = d3.time.format("%Y-%m-%d").parse;
         var convertDate = function(d) {
@@ -28,7 +28,7 @@ var Graph = function(d3){
             .range([height, 0]);
 
         var color = d3.scale.ordinal()
-            .range(["#FF0000", "#009933" , "#0000FF"]);
+            .range(["#ac965c", "#ffffff" , "#79f79c"]);
 
         var xAxis = d3.svg.axis()
             .scale(x)

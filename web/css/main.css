@@ -51,7 +51,7 @@ input{
 	position: fixed;
 	width: 64%;
 	right: 0;
-	margin-right: 15px;
+	padding-top: 50px;
 }
 
 .ticker-holder {
@@ -139,7 +139,7 @@ li:nth-of-type(even) {
 
 
 g text{
-	fill: #ffffff;
+	fill: #ac965c;
 }
 
 #graph-holder{
