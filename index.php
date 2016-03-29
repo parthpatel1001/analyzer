@@ -27,12 +27,7 @@ $container['view'] = new \Slim\Views\PhpRenderer("web/");
 $app->get('/', function (Request $request, Response $response) {
     return $this->view->render($response, "index.html");
 });
-//$app->get('/api/test', function($request, $response) {
-//    $name = "bob";
-//    $response->getBody()->write("Hello, $name");
-//    return $response;
-//
-//});
+
 /**
  * GET /n_day_average_returns
  */
@@ -70,23 +65,3 @@ $app->get("/api/n_day_average_returns", function (Request $request, Response $re
 });
 
 $app->run();
-//declare(strict_types=1);
-/*
-require __DIR__.'/vendor/autoload.php';
-
-// TODO fix all of this
-
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-
-$request = Request::createFromGlobals();
-
-
-
-
-
-$response = new Response(json_encode($out));
-$response->headers->set('Content-Type', 'application/json');
-$response->send();
-*/
