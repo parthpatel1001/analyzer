@@ -8,25 +8,25 @@
 
 namespace Analyzer\Helpers;
 
-// TODO hook up better math stuff here
+// TODO hook up better float handling library here
 class Math
 {
-    public function add(float $a, float $b)
+    public function add($a, $b)
     {
         return $a + $b;
     }
 
-    public function mult(float $a, float $b)
+    public function mult($a, $b)
     {
         return $a * $b;
     }
 
-    public function div(float $a, float $b)
+    public function div($a, $b)
     {
-        return $a/b;
+        return $a/$b;
     }
 
-    public function sub(float $a, float $b)
+    public function sub($a, $b)
     {
         return $a - $b;
     }
@@ -36,7 +36,7 @@ class Math
         return array_sum($nums)/count($nums);
     }
 
-    public function percentChange(float $a, float $b)
+    public function percentChange($a, $b)
     {
         return ($b/$a) - 1;
     }

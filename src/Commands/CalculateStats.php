@@ -54,7 +54,7 @@ class CalculateStats extends Command
      * @param int $i
      * @param int|null $m
      */
-    private function nDayReturns(array $tickers, OutputInterface $output, int $i, int $m = null)
+    private function nDayReturns(array $tickers, OutputInterface $output, $i, $m = null)
     {
         foreach($tickers as $ticker)
         {
@@ -84,7 +84,7 @@ class CalculateStats extends Command
      * @param int $i
      * @param int|null $m
      */
-    private function nDayAverageReturns(array $tickers, OutputInterface $output, int $i, int $m = null)
+    private function nDayAverageReturns(array $tickers, OutputInterface $output, $i, $m = null)
     {
         foreach($tickers as $ticker)
         {

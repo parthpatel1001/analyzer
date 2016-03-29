@@ -63,7 +63,7 @@ class YahooFinance
      * @param bool $return
      * @return TickerCollection
      */
-    public function getData(string $ticker, bool $fromCache = true, bool $saveToCache = true, bool $return = true)
+    public function getData($ticker, $fromCache = true, $saveToCache = true, $return = true)
     {
         if ($fromCache && $this->fileSystem->has($ticker))
         {

@@ -48,13 +48,13 @@ class Ticker
      * @param float $adjClose
      */
     public function __construct(
-        string $date,
-        float $open,
-        float $high,
-        float $low,
-        float $close,
-        float $volume,
-        float $adjClose)
+        $date,
+        $open,
+        $high,
+        $low,
+        $close,
+        $volume,
+        $adjClose)
     {
         $this->date = $date;
         $this->open = $open;
@@ -85,7 +85,7 @@ class Ticker
         return $this->open;
     }
 
-    /**
+    /*
      * @return float
      */
     public function getHigh()

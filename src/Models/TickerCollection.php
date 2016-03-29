@@ -34,7 +34,7 @@ class TickerCollection implements ArrayAccess
      * @param string $ticker
      * @param array $data
      */
-    public function __construct(string $ticker, array $data)
+    public function __construct($ticker, array $data)
     {
         $this->ticker = $ticker;
         $this->data = $data;

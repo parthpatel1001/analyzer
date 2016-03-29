@@ -58,7 +58,7 @@ var Analyzer = function(document,$,d3,Graph){
 
         $.ajax({
             dataType: "json",
-            url: '/',
+            url: '/api/n_day_average_returns',
             data: params,
             success: finished
         });

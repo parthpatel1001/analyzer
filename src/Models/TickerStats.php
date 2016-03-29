@@ -43,7 +43,7 @@ class TickerStats
      * @param callable $chunk
      * @return null|array
      */
-    public function getNDayReturns(TickerCollection $tickerCollection, int $n, int $m = null, callable $chunk = null)
+    public function getNDayReturns(TickerCollection $tickerCollection, $n, $m = null, callable $chunk = null)
     {
         $len = $tickerCollection->length();
         // TODO do this all better
@@ -108,7 +108,7 @@ class TickerStats
      * @param callable $chunk
      * @return array
      */
-    public function getNDayAverageReturns(TickerCollection $tickerCollection, int $n, int $m = null, callable $chunk = null)
+    public function getNDayAverageReturns(TickerCollection $tickerCollection, $n, $m = null, callable $chunk = null)
     {
         // TODO this is copypasta do this better
         if ($m !== null ) {

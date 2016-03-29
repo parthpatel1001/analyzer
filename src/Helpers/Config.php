@@ -17,7 +17,7 @@ class Config
      */
     static $configData;
 
-    public function __construct(string $configFileLocation)
+    public function __construct($configFileLocation)
     {
         $this->configFileLocation = $configFileLocation;
     }
@@ -31,7 +31,7 @@ class Config
         return self::$configData;
     }
 
-    public function get(string $name = null)
+    public function get($name = null)
     {
         $configData = $this->getConfigData();
 
